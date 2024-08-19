@@ -58,3 +58,9 @@ helm install istiod istio/istiod -n istio-system --wait
 
 kubectl get pods -n istio-system # check if all pods are running
 ```
+
+## See Also
+
+- [DestinationRule](https://istio.io/latest/docs/reference/config/networking/destination-rule/)
+- [VirtualService](https://istio.io/latest/docs/reference/config/networking/virtual-service/)
+- [Consistent hashing based on httpHeader works through ingress-gateway but not through service #12178](https://github.com/istio/istio/issues/12178#issuecomment-473248420)
