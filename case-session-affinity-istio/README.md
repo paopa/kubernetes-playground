@@ -23,7 +23,7 @@ kubectl apply -f nginx-destinationrule.yaml -n sample
 kubectl apply -f nginx-virtualservice.yaml -n sample
 ```
 
-![Check resources running](./misc/SCR-20240819-tviv.png)
+![Check resources running](../misc/SCR-20240819-tyod.png)
 
 ## Testing the Session Affinity
 
@@ -33,7 +33,7 @@ Before we start testing, let's open another terminal and watch the logs of the n
 kubectl logs -f <pod>
 ```
 
-Create a tewst pod and exec into it:
+Create a test pod and exec into it:
 
 ```fish
 kubectl apply -f test-pod.yaml -n sample
@@ -43,7 +43,7 @@ kubectl exec -it test-pod -n sample -- /bin/sh
 Now, let's test the session affinity:
 
 ```fish
-curl -H "user-session: sid-2" http://nginx-service
+curl -H "user-session: sid-1" http://nginx-service
 ```
 
 We can see that the request with the same value of the `user-session` header is routed to the same pod.
